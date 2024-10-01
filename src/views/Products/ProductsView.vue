@@ -4,7 +4,7 @@
             <div class="card-header">
                 <h4>
                     Product
-                    <router-link to="/product/create" class="btn btn-primary float-end">
+                    <router-link to="/products/create" class="btn btn-primary float-end">
                         Add Product
                     </router-link>
                 </h4>
@@ -24,7 +24,7 @@
                         <tr v-for="(product, id) in this.products" :key="id">
                             <td>{{ product.id }}</td>
                             <td>{{ product.nome }}</td>
-                            <td>{{ product.preco }}</td>
+                            <td>R$ {{ product.preco }}</td>
                             <td>{{ product.quantidade }}</td>
                             <td class="d-flex justify-content-center gap-2">
                                 <router-link to="/product/update" class="btn btn-success">
@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         getProducts() {
-            axios.get('http://localhost/lojinha/public/api/produtos').then(res => {
+            axios.get('http://127.0.0.1:8000/api/produtos').then(res => {
                 this.products = res.data
                 // console.log(this.products);
 
