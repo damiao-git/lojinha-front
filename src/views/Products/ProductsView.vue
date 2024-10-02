@@ -27,7 +27,7 @@
                             <td>R$ {{ product.preco }}</td>
                             <td>{{ product.quantidade }}</td>
                             <td class="d-flex justify-content-center gap-2">
-                                <router-link to="/product/update" class="btn btn-success">
+                                <router-link :to="{path: '/produtos/'+product.id+'/edit'}" class="btn btn-success">
                                     Editar
                                 </router-link>
                                 <router-link to="/product/destroy" class="btn btn-danger">
